@@ -29,7 +29,7 @@ def train(document, y):
     clf.partial_fit(X, [y])
 
 def sqlite_entry(path, document, y):
-    conn = sqlite3.connect(path)
+    conn = sqlite3.connect('movieclassifier/reviews.sqlite')
     c = conn.cursor()
     c.execute("INSERT INTO review_db (review, sentiment, date) VALUES (?, ?, DATETIME('now'))", (document, y))
     conn.commit()
