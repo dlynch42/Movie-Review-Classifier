@@ -5,6 +5,8 @@ import pandas as pd
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import HashingVectorizer
 from sklearn.linear_model import SGDClassifier
+import warnings
+warnings.simplefilter(action='ignore', category=DeprecationWarning)
 
 
 stop = stopwords.words('english')
