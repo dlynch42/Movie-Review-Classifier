@@ -9,7 +9,7 @@ from vectorizer import vect
 # import HashingVectorizer from local dir
 app = Flask(__name__)
 
-######## Preparing the Classifier
+# Preparing the Classifier
 cur_dir = os.path.dirname(__file__)
 clf = pickle.load(open(os.path.join(cur_dir,
                                     'movieclassifier',
@@ -35,7 +35,7 @@ def sqlite_entry(path, document, y):
     conn.commit()
     conn.close()
 
-######## Flask
+# Flask
 class ReviewForm(Form):
     moviereview = TextAreaField('',
                                 [validators.DataRequired(),
