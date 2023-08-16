@@ -25,7 +25,7 @@ vect = HashingVectorizer(decode_error='ignore',
                          preprocessor=None,
                          tokenizer=tokenizer)
 
-clf = SGDClassifier(loss='log', random_state=1, max_iter=1)
+clf = SGDClassifier(loss='log_loss', random_state=1, max_iter=1)
 
 
 df = pd.read_csv('./movie_data_small.csv', encoding='utf-8')

@@ -156,7 +156,7 @@ vect = HashingVectorizer(decode_error='ignore',
                          n_features=2**21,
                          preprocessor=None,
                          tokenizer=tokenizer)
-clf = SGDClassifier(loss='log', random_state=1, max_iter=1)
+clf = SGDClassifier(loss='log_loss', random_state=1, max_iter=1)
 doc_stream = stream_docs(path='movie_data.csv')
 
 # Start OoC learning
@@ -200,7 +200,7 @@ print(lda.components_.shape)
 
 # Print top 5 words, need to sort topic array in reverse order
 n_top_words = 5
-feature_names = count.get_feature_names()
+feature_names = count.get_feature_names_out()
 for topic_idx, topic in enumerate(lda.components_):
     print("Topic %d:" % (topic_idx + 1))
     print(" ".join([feature_names[i]
